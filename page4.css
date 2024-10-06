@@ -1,0 +1,47 @@
+@media (max-width: 980px) {
+    .wrapper .order .container {
+      max-width: 100%;
+      width: 414px;
+      padding: 23px;
+      border: 2px solid black;
+    }
+    .wrapper .order .container .left-box .heading .shpping-method p{
+        font-size: 14px;
+        width: 600!important;
+        text-align: left;
+        font-family: Roboto;
+        color: #000000;
+    }
+
+    .radio-box {
+        text-transform: capitalize;
+    }
+
+    .delivery-date {
+        text-transform: capitalize;
+    }
+    .wrapper .order .container .left-box .heading p {
+        font-size: 16px;
+        font-family:Roboto;
+        text-transform: none;
+        
+    }
+    .payment_as_shipping_label span {
+        text-transform: none;
+        font-family:Roboto;
+        font-weight: 500;
+        
+    }
+    .form-cards li.first-text {
+        text-transform: capitalize;
+    }
+    .guarantee-text {
+        font-family: Roboto;
+    }
+}
+   
+
+
+
+
+

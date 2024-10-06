@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>S-Checkout &#8211; tryglponeactivate</title>
+    <meta name="robots" content="max-image-preview:large" />
+
+    <!-- <link
+      rel="stylesheet"
+      id="s-checkout-style-css"
+      href="https://tryglponeactivate.com/wp-content/plugins/s-checkout//assets/order.css?ver=6.6.2"
+      media="all"
+    /> -->
+    <link
+      rel="stylesheet"
+      id="s-checkout-style-css"
+      href="/style.css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="s-checkout-slick-style-css"
+      href="https://tryglponeactivate.com/wp-content/plugins/s-checkout//assets/slick.css?ver=6.6.2"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="s-checkout-slick-theme-style-css"
+      href="https://tryglponeactivate.com/wp-content/plugins/s-checkout//assets/slick-theme.css?ver=6.6.2"
+      media="all"
+    />
+    <link rel="stylesheet" href="/mobile.css" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+    <!-- Icon CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="page3.css">
+    <link rel="stylesheet" href="page4.css">
+    <script
+      src="https://tryglponeactivate.com/wp-includes/js/jquery/jquery.min.js?ver=3.7.1"
+      id="jquery-core-js"
+    ></script>
+    <script
+      src="https://tryglponeactivate.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1"
+      id="jquery-migrate-js"
+    ></script>
+  </head>
+  <body>
+    <div id="app" class="wrapper">
+      <div class="order">
+        <div class="container clearfix">
+          <div class="left-box">
+            <div class="heading">
+               
+              <div class="steps">
+                <div class="step completed "><span>Qualify Order</span></div>
+                <div class="step completed">
+                  <span>Finish Order</span>
+                </div>
+                <div class="step three active "><span>Summary</span></div>
+              </div>
+            
+              <div class="heading-reserved-container">
+                <h2 class="your-bottle">Final Step- Payment Information</h2>
+    
+            </div>
+            <div class="form-in show-3ds-popup">
+                <div class="delivery-type">
+                  <span class="delivery-title font-bold">Choose shipping method:</span>
+                  <div class="delivery-row delivery-expedited">
+                    <input checked="checked" type="radio" name="delivery" id="expedited-dna">
+                    <label for="expedited-dna" class="delivery-line">
+                      <span class="radio-box">
+                        <span class="radio-fake"></span> Expedited
+                      </span>
+                      <span class="delivery-date" id="expedited-date">VIP Rush Delivery
+                      </span>
+                      <span class="delivery-price" id="expedited-price">$19.95</span>
+                    </label>
+                  </div>
+                  <div class="delivery-row delivery-standard">
+                    <input type="radio" name="delivery" id="standard">
+                    <label for="standard" class="delivery-line">
+                      <span class="radio-box">
+                        <span class="radio-fake"></span> Standard
+                      </span>
+                      <span class="delivery-date" id="standard-date">
+                        Ships in 2-3 Days
+                      </span>
+                      <span class="delivery-price">$00.00</span>
+                    </label>
+                  </div>
+                </div>
+                <p style="text-align: center" class="font-bold">
+                  Your order will be processed
+                  on our secure servers
+                </p>
+                <label for="payment_as_shipping" class="payment_as_shipping_label">
+                  <input type="checkbox" name="payment_as_shipping" class="payment_as_shipping" id="payment_as_shipping" checked="checked">
+                  <span class="font-bold">Billing same as Shipping</span>
+                </label>
+               
+                <ul class="form-cards">
+                  <li class="first-text">Accepted Cards:</li>
+                  <li>
+                    <img decoding="async" src="https://tryglponeactivate.com/wp-content/uploads/2024/09/visa-1.png" alt="">
+                  </li>
+                  <li>
+                    <img decoding="async" src="https://tryglponeactivate.com/wp-content/uploads/2024/09/mastercard.png" alt="">
+                  </li>
+                </ul>
+                <div class="form-error-text" id="formError" style="display: none; margin-bottom: 20px"></div>
+
+                <div class="position-relative">
+                  <div id="card-element-number" class="custom-card-element StripeElement StripeElement--empty"><div class="__PrivateStripeElement" style="margin: 0px !important; padding: 0px !important; border: none !important; display: block !important; background: transparent !important; position: relative !important; opacity: 1 !important;"><iframe name="__privateStripeFrame6113" frameborder="0" allowtransparency="true" scrolling="no" role="presentation" allow="payment *" src="https://js.stripe.com/v3/elements-inner-card-5d95168d3f8220d69edc1e99a79150d2.html#wait=false&amp;mids[guid]=NA&amp;mids[muid]=7f431784-ff03-4782-ac88-dbf9a2a33a14e8d302&amp;mids[sid]=NA&amp;style[base][color]=%23000&amp;style[base][fontFamily]=Arial%2C+sans-serif&amp;style[base][fontSmoothing]=antialiased&amp;style[base][fontSize]=16px&amp;style[base][lineHeight]=24px&amp;style[base][::placeholder][color]=%23eda24&amp;style[invalid][color]=%23ff0000&amp;style[invalid][iconColor]=%23ff0000&amp;rtl=false&amp;componentName=cardNumber&amp;keyMode=live&amp;apiKey=pk_live_51PwRkVFxD7iHjsUzo1EW4RPzig76yP9EqETFgRECjgCrCZX0ynIkyPcxEGWfgXTsKNJW4Kl6dBKXSUx0tY2ajtkt001YBYLDd5&amp;referrer=http%3A%2F%2F127.0.0.1%3A5500%2Findex.html&amp;controllerId=__privateStripeController6111" title="Secure card number input frame" style="border: 0px !important; margin: 0px !important; padding: 0px !important; width: 1px !important; min-width: 100% !important; overflow: hidden !important; display: block !important; user-select: none !important; transform: translate(0px) !important; color-scheme: light only !important; height: 24px;"></iframe><input class="__PrivateStripeElement-input" aria-hidden="true" aria-label=" " autocomplete="false" maxlength="1" style="border: none !important; display: block !important; position: absolute !important; height: 1px !important; top: -1px !important; left: 0px !important; padding: 0px !important; margin: 0px !important; width: 100% !important; opacity: 0 !important; background: transparent !important; pointer-events: none !important; font-size: 16px !important;"></div></div>
+                  <img decoding="async" id="card-brand-icon" src="https://tryglponeactivate.com/wp-content/uploads/2024/09/cardplaceholder.png" style="" alt="Card Brand">
+                </div>
+                <div class="d-flex">
+                  <div id="card-element-expiry" class="custom-card-element StripeElement StripeElement--empty"><div class="__PrivateStripeElement" style="margin: 0px !important; padding: 0px !important; border: none !important; display: block !important; background: transparent !important; position: relative !important; opacity: 1 !important;"><iframe name="__privateStripeFrame6114" frameborder="0" allowtransparency="true" scrolling="no" role="presentation" allow="payment *" src="https://js.stripe.com/v3/elements-inner-card-5d95168d3f8220d69edc1e99a79150d2.html#wait=false&amp;mids[guid]=NA&amp;mids[muid]=7f431784-ff03-4782-ac88-dbf9a2a33a14e8d302&amp;mids[sid]=NA&amp;style[base][color]=%23000&amp;style[base][fontFamily]=Arial%2C+sans-serif&amp;style[base][fontSmoothing]=antialiased&amp;style[base][fontSize]=16px&amp;style[base][lineHeight]=24px&amp;style[base][::placeholder][color]=%23eda24&amp;style[invalid][color]=%23ff0000&amp;style[invalid][iconColor]=%23ff0000&amp;rtl=false&amp;componentName=cardExpiry&amp;keyMode=live&amp;apiKey=pk_live_51PwRkVFxD7iHjsUzo1EW4RPzig76yP9EqETFgRECjgCrCZX0ynIkyPcxEGWfgXTsKNJW4Kl6dBKXSUx0tY2ajtkt001YBYLDd5&amp;referrer=http%3A%2F%2F127.0.0.1%3A5500%2Findex.html&amp;controllerId=__privateStripeController6111" title="Secure expiration date input frame" style="border: 0px !important; margin: 0px !important; padding: 0px !important; width: 1px !important; min-width: 100% !important; overflow: hidden !important; display: block !important; user-select: none !important; transform: translate(0px) !important; color-scheme: light only !important; height: 24px;"></iframe><input class="__PrivateStripeElement-input" aria-hidden="true" aria-label=" " autocomplete="false" maxlength="1" style="border: none !important; display: block !important; position: absolute !important; height: 1px !important; top: -1px !important; left: 0px !important; padding: 0px !important; margin: 0px !important; width: 100% !important; opacity: 0 !important; background: transparent !important; pointer-events: none !important; font-size: 16px !important;"></div></div>
+                  <div id="card-element-cvc" class="custom-card-element StripeElement StripeElement--empty"><div class="__PrivateStripeElement" style="margin: 0px !important; padding: 0px !important; border: none !important; display: block !important; background: transparent !important; position: relative !important; opacity: 1 !important;"><iframe name="__privateStripeFrame6115" frameborder="0" allowtransparency="true" scrolling="no" role="presentation" allow="payment *" src="https://js.stripe.com/v3/elements-inner-card-5d95168d3f8220d69edc1e99a79150d2.html#wait=false&amp;mids[guid]=NA&amp;mids[muid]=7f431784-ff03-4782-ac88-dbf9a2a33a14e8d302&amp;mids[sid]=NA&amp;style[base][color]=%23000&amp;style[base][fontFamily]=Arial%2C+sans-serif&amp;style[base][fontSmoothing]=antialiased&amp;style[base][fontSize]=16px&amp;style[base][lineHeight]=24px&amp;style[base][::placeholder][color]=%23eda24&amp;style[invalid][color]=%23ff0000&amp;style[invalid][iconColor]=%23ff0000&amp;rtl=false&amp;componentName=cardCvc&amp;keyMode=live&amp;apiKey=pk_live_51PwRkVFxD7iHjsUzo1EW4RPzig76yP9EqETFgRECjgCrCZX0ynIkyPcxEGWfgXTsKNJW4Kl6dBKXSUx0tY2ajtkt001YBYLDd5&amp;referrer=http%3A%2F%2F127.0.0.1%3A5500%2Findex.html&amp;controllerId=__privateStripeController6111" title="Secure CVC input frame" style="border: 0px !important; margin: 0px !important; padding: 0px !important; width: 1px !important; min-width: 100% !important; overflow: hidden !important; display: block !important; user-select: none !important; transform: translate(0px) !important; color-scheme: light only !important; height: 24px;"></iframe><input class="__PrivateStripeElement-input" aria-hidden="true" aria-label=" " autocomplete="false" maxlength="1" style="border: none !important; display: block !important; position: absolute !important; height: 1px !important; top: -1px !important; left: 0px !important; padding: 0px !important; margin: 0px !important; width: 100% !important; opacity: 0 !important; background: transparent !important; pointer-events: none !important; font-size: 16px !important;"></div></div>
+                </div>
+
+                <div id="card-errors" role="alert"></div>
+                <!-- <button type="submit">Submit Payment</button> -->
+
+                <div id="payment-message"></div>
+
+                <button class="submit-btn">
+                  <span>RUSH MY ORDER NOW</span>
+                  <span>60-Day Satisfaction Guarantee</span>
+                </button>
+              </div>
+          </div>
+
+          <div class="guarantee">
+            <div class="guarantee-content">
+              <img loading="lazy" decoding="async" src="https://tryglponeactivate.com/wp-content/uploads/2024/10/18a363937175b1dd64562fcfbdfa9b6d.svg-fill.svg" width="88" height="88" alt="" class="guarantee-icon">
+              <span class="guarantee-text"><b>Money-Back Guarantee!</b>We're so confident that
+                GLP-1ACTIV8 Multi formula ingredients will work for you that
+                we are offering a 60-day Money-Back Guarantee! So, feel
+                confident that you will get your result or your money
+                back!</span>
+            </div>
+          </div>
+          
+
+        </div>
+        
+      </div>
+    </div>
+    </div>
+    
+
+
+    
+  </body>
+
+</html>

@@ -1,0 +1,111 @@
+@media (max-width: 980px) {
+    .wrapper .order .container {
+      max-width: 100%;
+      width: 414px;
+      padding: 23px;
+      border: 2px solid black;
+    }
+
+    #app .heading-reserved-container .your-bottle{
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    font-family:Helvetica, Arial, sans-serif;
+    text-transform: capitalize;
+}
+#app .heading-reserved-container .watch{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+}
+#app .heading-reserved-container .watch img{
+    width: 29px;
+    height: 27px;
+}
+#app .heading-reserved-container .watch p{
+    color: #FF0000;
+    font-size: 18px;
+    font-weight: 500;
+    font-family: Helvetica, Arial, sans-serif;
+}
+#app .heading-reserved-container .sent-text {
+    font-family: Helvetica, Arial, sans-serif;
+font-size: 14px;
+font-weight: 500;
+line-height: 24px;
+text-align: center;
+color: #1D1D1D;
+margin-top: 8px;
+}
+
+.wrapper .order .container .left-box .heading form .first-name .address-img {
+    position: absolute;
+    right: 340px;
+    bottom: 425px;
+    color: #d4bfbf;
+    height: 20px;
+    width: 20px;
+  }
+  .wrapper .order .container .left-box .heading form .email .city-img{
+    position: absolute;
+    right: 340px;
+    bottom:280px;
+    color: #d4bfbf;
+    height: 20px;
+    width: 20px;
+
+  }
+  
+  .wrapper .order .container .left-box .heading form .phone-number .state-img{
+    position: absolute;
+    right: 340px;
+    bottom:210px;
+    color: #d4bfbf;
+    height: 20px;
+    width: 20px;
+  }
+  .wrapper .order .container .left-box .heading form .phone-number select{
+
+font-family: Roboto;
+font-size: 14px;
+font-weight: 400;
+line-height: 19.6px;
+text-align: left;
+
+  }
+.wrapper .order .container .left-box .heading form .last-name .zip-img{
+    position: absolute;
+    right: 340px;
+    bottom:355px;
+    color: #d4bfbf;
+    height: 20px;
+    width: 20px;
+  }
+  .free-shpping  {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-sizing: border-box;
+  }
+  .free-shpping .fast-free-shipping-us {
+font-family: Helvetica, Arial, sans-serif;
+font-size: 16px;
+font-style: italic;
+font-weight: 500;
+line-height: 24px;
+text-align: center;
+text-transform: capitalize;
+color: #FF0000;
+  }
+  .free-shpping .fast-free-shipping-us-img{
+    width: 111px;
+height: 29px;
+top: 583px;
+left: 239px;
+gap: 0px;
+opacity: 0px;
+
+  }
+
+}
