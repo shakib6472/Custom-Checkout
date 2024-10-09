@@ -216,7 +216,7 @@ class Elementor_s_checkout_mob extends \Elementor\Widget_Base
                                         </div>
                                         <div class="checkout-check-icon-btn">
                                             <p class="checkout-text"> Guaranteed Safe & Secure Checkout </p>
-                                            <img src="https://tryglponeactivate.com/wp-content/uploads/2024/10/Group-1000007532.png" alt="" class="checkout-img">
+                                            <img src="https://tryglponeactivate.com/wp-content/uploads/2024/10/All-Logo-icon.svg" alt="" class="checkout-img">
                                             <button class="button-div second_step" data-quantity="3">
                                                 <p class="button-div-one">Grab My GLP-1ACTIV8</p>
                                                 <p class="button-div-two">60-Day Satisfaction Guarantee</p>
@@ -277,7 +277,7 @@ class Elementor_s_checkout_mob extends \Elementor\Widget_Base
                                         </div>
                                         <div class="checkout-check-icon-btn ">
                                             <p class="checkout-text"> Guaranteed Safe & Secure Checkout </p>
-                                            <img src="https://tryglponeactivate.com/wp-content/uploads/2024/10/Group-1000007532.png" alt="" class="checkout-img">
+                                            <img src="https://tryglponeactivate.com/wp-content/uploads/2024/10/All-Logo-icon.svg" alt="" class="checkout-img">
                                             <button class="button-div second_step" data-quantity="2">
                                                 <p class="button-div-one">Grab My GLP-1ACTIV8</p>
                                                 <p class="button-div-two">60-Day Satisfaction Guarantee</p>
@@ -326,7 +326,7 @@ class Elementor_s_checkout_mob extends \Elementor\Widget_Base
 
                                         <div class="checkout-check-icon-btn  ">
                                             <p class="checkout-text"> Guaranteed Safe & Secure Checkout </p>
-                                            <img src="https://tryglponeactivate.com/wp-content/uploads/2024/10/Group-1000007532.png" alt="" class="checkout-img">
+                                            <img src="https://tryglponeactivate.com/wp-content/uploads/2024/10/All-Logo-icon.svg" alt="" class="checkout-img">
                                             <button class="button-div second_step" data-quantity="1">
                                                 <p class="button-div-one">Grab My GLP-1ACTIV8</p>
                                                 <p class="button-div-two">60-Day Satisfaction Guarantee</p>
@@ -465,7 +465,7 @@ class Elementor_s_checkout_mob extends \Elementor\Widget_Base
                                     <h2 class="your-bottle">your bottle is reserved for the next</h2>
                                     <div class="watch">
                                         <img src="https://tryglponeactivate.com/wp-content/uploads/2024/10/Objects.png" alt="">
-                                        <p>09:35 Minutes</p>
+                                        <p class="counting-down-timer">09:35 Minutes</p>
                                         <img src="https://tryglponeactivate.com/wp-content/uploads/2024/10/Objects.png" alt="">
                                     </div>
                                     <p class="sent-text">Where do we send it?</p>
@@ -485,15 +485,14 @@ class Elementor_s_checkout_mob extends \Elementor\Widget_Base
 
                                     <div class="email">
                                         <label for="email">City :</label>
-                                        <input type="text" name="email" id="email" placeholder="City">
+                                        <input type="text" name="city" id="email" placeholder="City">
                                         <img src="https://tryglponeactivate.com/wp-content/uploads/2024/10/fc246daf9b1ba3391688cfd17fbb3457.svg-fill.png" alt="" class="city-img">
                                     </div>
 
                                     <div class="phone-number">
-                                        <label for="phonenumber">State or Province :</label>
-                                        <select name="phonenumber" id="phonenumber">
-                                            <option value="Nunavut">Nunavut</option>
-                                        </select>
+                                        <label for="state_province">State or Province :</label>
+                                        <input type="text" name="state_province" id="state_province" placeholder="State">
+                                       
                                         <img src="https://tryglponeactivate.com/wp-content/uploads/2024/10/Image-1.png" alt="" class="state-img">
                                     </div>
 

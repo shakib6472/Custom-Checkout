@@ -111,11 +111,7 @@ jQuery(document).ready(function ($) {
     console.log($(this).hasClass("product2"));
     $(".product").removeClass("active");
     $(this).addClass("active");
-    // Check if the clicked product contains a child with the class 'second_step'
-    var secondStep = $(this).find('.second_step');
-    if (secondStep.length) {
-        secondStep.trigger('click'); // Trigger click on the child element
-    }
+   
     
   });
 
@@ -129,7 +125,7 @@ jQuery(document).ready(function ($) {
   });
 
 
-  // set hewight inititate
+  // set hewight at inititate
   if ($('.wrapper.w-1').length) {
     // Get the total height of .wrapper.w-1 including padding and borders
     var wrapperHeight = $('.wrapper.w-1').outerHeight();
@@ -217,6 +213,35 @@ jQuery(document).ready(function ($) {
 
 
   });
+
+  // Set the initial time in seconds
+  var totalSeconds = 9 * 60 + 35; // 9 minutes and 35 seconds
+
+  // Function to update the timer
+  function updateTimer() {
+      // Calculate minutes and seconds
+      var minutes = Math.floor(totalSeconds / 60);
+      var seconds = totalSeconds % 60;
+
+      // Format minutes and seconds to always show two digits
+      var formattedMinutes = minutes < 10 ? '0' + minutes : minutes;
+      var formattedSeconds = seconds < 10 ? '0' + seconds : seconds;
+
+      // Update the timer display
+      $('.counting-down-timer').text(formattedMinutes + ':' + formattedSeconds);
+
+      // Decrease the total seconds
+      if (totalSeconds > 0) {
+          totalSeconds--;
+      } else {
+          clearInterval(timerInterval); // Stop the timer when it reaches zero
+          $('.counting-down-timer').text('Time is up!'); // Message when time is up
+      }
+  }
+  // Call updateTimer immediately to set the initial value
+  updateTimer();
+  // Update the timer every second
+  var timerInterval = setInterval(updateTimer, 1000);
 
 });
 

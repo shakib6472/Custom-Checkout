@@ -2,7 +2,7 @@
   * Plugin Name:       S-Checkout Core
   * Plugin URI:        https://facebook.com/shakib6472/
   * Description:       This is the s-checkout websites Custom Plugin. All features are came from here.
-  * Version:           2.1.1
+  * Version:           2.1.2
   * Requires at least: 5.2
   * Requires PHP:      7.2
   * Author:            Shakib Shown
