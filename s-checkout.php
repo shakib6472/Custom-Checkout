@@ -2,7 +2,7 @@
   * Plugin Name:       S-Checkout Core
   * Plugin URI:        https://facebook.com/shakib6472/
   * Description:       This is the s-checkout websites Custom Plugin. All features are came from here.
-  * Version:           2.1.1
+  * Version:           2.1.2
   * Requires at least: 5.2
   * Requires PHP:      7.2
   * Author:            Shakib Shown
@@ -69,11 +69,42 @@ add_action('elementor/widgets/register', 'elementor_s_checkout_widgets');
 
 
 // Activation function
-function s_checkout_activation_function()
-{
-	// Your activation code here
-	// For example, create database tables or set default options
+// Hook into plugin activation
+register_activation_hook( __FILE__, 's_checkout_activation_function' );
+
+function s_checkout_activation_function() {
+    global $wpdb;
+    
+    // Define the table name
+    $table_name = $wpdb->prefix . 's_checkout_sessions';
+    
+    // Set the character set and collation
+    $charset_collate = $wpdb->get_charset_collate();
+    
+    // SQL query to create the table with all required columns
+    $sql = "CREATE TABLE $table_name (
+        id BIGINT(20) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+        fname VARCHAR(255) NOT NULL,
+        lname VARCHAR(255) NOT NULL,
+        email VARCHAR(255) NOT NULL,
+        phone VARCHAR(50) NOT NULL,
+        address TEXT NOT NULL,
+        zipcode VARCHAR(10) NOT NULL,
+        city VARCHAR(100) NOT NULL,
+        state VARCHAR(100) NOT NULL,
+        ip_address VARCHAR(100) NOT NULL,
+        timestamp DATETIME NOT NULL,
+        session_data TEXT,
+        advance_data TEXT,
+        user_id BIGINT(20) UNSIGNED,
+        UNIQUE KEY unique_ip (ip_address, timestamp)
+    ) $charset_collate;";
+    
+    // Include WordPress function to require the necessary db functions
+    require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
+    dbDelta( $sql ); // Create the table
 }
+
 
 // Deactivation function
 function s_checkout_deactivation_function()
@@ -115,5 +146,71 @@ function add_to_cart_this_product()
 add_action('wp_ajax_add_to_cart_this_product', 'add_to_cart_this_product');
 add_action('wp_ajax_nopriv_add_to_cart_this_product', 'add_to_cart_this_product');
 
+// rest api
+// Hook into REST API initialization
+add_action( 'rest_api_init', function () {
+    // Register the webhook endpoint
+    register_rest_route( 's_checkout/v1', '/webhook/', array(
+        'methods'  => 'POST',
+        'callback' => 's_checkout_webhook_handler',
+        'permission_callback' => '__return_true',  // Allow open access (you can secure it later)
+    ) );
+} );
 
+ 
+function s_checkout_webhook_handler( $data ) {
+    global $wpdb;
+  
+    // Retrieve the POST parameters (as it's form-urlencoded data)
+    $received_data = $data->get_params(); 
 
+    // Ensure the required fields are present in the received data
+    if ( ! isset( $received_data['fields']['fname'] ) || 
+         ! isset( $received_data['fields']['lname'] ) || 
+         ! isset( $received_data['fields']['email'] ) ||
+         ! isset( $received_data['fields']['phone'] ) ||
+         ! isset( $received_data['fields']['address'] ) ||
+         ! isset( $received_data['fields']['zipcode'] ) ||
+         ! isset( $received_data['fields']['city'] ) ||
+         ! isset( $received_data['fields']['state'] ) ) { 
+
+        return new WP_REST_Response( 'Missing required fields', 400 );
+    }
+
+    // Extract the data from the fields
+    $fname      = sanitize_text_field( $received_data['fields']['fname']['value'] );
+    $lname      = sanitize_text_field( $received_data['fields']['lname']['value'] );
+    $email      = sanitize_email( $received_data['fields']['email']['value'] );
+    $phone      = sanitize_text_field( $received_data['fields']['phone']['value'] );
+    $address    = sanitize_textarea_field( $received_data['fields']['address']['value'] );
+    $zipcode    = sanitize_text_field( $received_data['fields']['zipcode']['value'] );
+    $city       = sanitize_text_field( $received_data['fields']['city']['value'] );
+    $state      = sanitize_text_field( $received_data['fields']['state']['value'] );
+
+    // Get the client's IP address and current timestamp
+    $ip_address = $_SERVER['REMOTE_ADDR'];
+	
+    $timestamp  = current_time( 'mysql' ); // current timestamp in MySQL format
+
+    // Insert the data into the database
+    $table_name = $wpdb->prefix . 's_checkout_sessions';
+    
+    $insert_data = array(
+        'fname'      => $fname,
+        'lname'      => $lname,
+        'email'      => $email,
+        'phone'      => $phone,
+        'address'    => $address,
+        'zipcode'    => $zipcode,
+        'city'       => $city,
+        'state'      => $state,
+        'ip_address' => $ip_address,
+        'timestamp'  => $timestamp,
+    ); 
+
+    // Insert the data into the database
+    $wpdb->insert( $table_name, $insert_data ); 
+
+    // Return a success response
+    return new WP_REST_Response( 'Data stored successfully', 200 );
+}

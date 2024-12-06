@@ -42,7 +42,8 @@ class Elementor_s_checkouts extends \Elementor\Widget_Base
     }
 
     protected function render()
-    {
+    { 
+
         ?>
         <div class="pre-loader">
             <div class="lds-spinner">
@@ -176,7 +177,7 @@ class Elementor_s_checkouts extends \Elementor\Widget_Base
                             </div>
                             <div class="guarantee">
                                 <div class="guarantee-content"> <img
-                                        src="https://tryactiveketop.com/static/activeketo_gummies/ca-v1/desktop/images/18a363937175b1dd64562fcfbdfa9b6d.svg"
+                                        src="https://tryglponeactivate.com/wp-content/uploads/2024/10/18a363937175b1dd64562fcfbdfa9b6d.svg-fill.svg"
                                         width="88" height="88" alt="" class="guarantee-icon" /> <span
                                         class="guarantee-text"><b>Money-Back Guarantee!</b>We're so confident that GLP-1ACTIV8 Multi formula ingredients will work for you that we are offering a 60-day Money-Back Guarantee! So, feel confident that you will get your result or your money back!</span> </div>
                             </div>
